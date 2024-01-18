@@ -67,3 +67,6 @@ foreach (var process in processes)
         Console.WriteLine($"Error running {process.Id}: {error}");
     }
 }
+
+Console.WriteLine("Press any key to exit...");
+Console.ReadLine();
