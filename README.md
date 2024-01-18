@@ -18,15 +18,19 @@ Build the solution.
 
 ```console
 dotnet clean
-dotnet build RmqTesting.sln
+dotnet build .\RmqTesting.sln
 ```
 
 Run `Runner.exe` then supply an instance count (number of `Runtime.exe` processes) and message count (number of messages each instance will send to RabbitMQ).
 
+```console
+.\Runner\bin\Debug\net8.0\Runner.exe
+```
+
 ![image](https://github.com/methvind/RmqTesting/assets/18388333/b5c7fc88-f4f3-4b32-97ef-e0ad6d242fd6)
 
-Alternatively, run `Runtime.exe` directly by passing the message count as the only argument:
+Alternatively, run `Runtime.exe` directly by passing the message count as the only argument. This will not show any progress in the console, but it might be useful if you want to observe from the management UI.
 
 ```console
-Runtime\bin\Debug\net8.0\Runtime.exe 10
+.\Runtime\bin\Debug\net8.0\Runtime.exe 10
 ```
