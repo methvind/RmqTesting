@@ -10,7 +10,7 @@ Optionally, enable the management UI by first enabling the [management plugin](h
 rabbitmq-plugins enable rabbitmq_management
 ```
 
-Then navigate to [the management UI at http://localhost:15672/](http://localhost:15672/) to see the status of your RabbitMQ service.
+Then navigate to [the management UI at http://localhost:15672/](http://localhost:15672/) to see the status of your RabbitMQ service. The default credentials are `guest:guest` (username:password).
 
 # Running
 
