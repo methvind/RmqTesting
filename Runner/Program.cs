@@ -36,12 +36,20 @@ do
 }
 while (!int.TryParse(Console.ReadLine(), out messageCountPerInstance));
 
+string currentDirectory = AppDomain.CurrentDomain.SetupInformation.ApplicationBase!;
+string runtimePath = Path.GetFullPath(Path.Combine(currentDirectory, "..", "..", "..", "..", "Runtime", "bin", "Debug", "net8.0", "Runtime.exe"));
+if (!File.Exists(runtimePath))
+{
+    Console.WriteLine($"Unable to find the runtime at {runtimePath}.");
+    Environment.Exit(1);
+}
+
 IEnumerable<Process> processes = Enumerable.Range(0, instanceCount)
     .Select(_ => new Process()
     {
         StartInfo = new()
         {
-            FileName = @"F:\Projects\RmqTesting\Runtime\bin\Debug\net8.0\Runtime.exe",
+            FileName = runtimePath,
             Arguments = $"{messageCountPerInstance}",
             RedirectStandardError = true,
             UseShellExecute = false,
