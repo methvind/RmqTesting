@@ -14,12 +14,19 @@ Then navigate to [the management UI at http://localhost:15672/](http://localhost
 
 # Running
 
-Build and run `Runner.exe` then supply an instance count (number of `Runtime.exe` processes) and message count (number of messages each instance will send to RabbitMQ).
+Build the solution.
+
+```console
+dotnet clean
+dotnet build RmqTesting.sln
+```
+
+Run `Runner.exe` then supply an instance count (number of `Runtime.exe` processes) and message count (number of messages each instance will send to RabbitMQ).
 
 ![image](https://github.com/methvind/RmqTesting/assets/18388333/b5c7fc88-f4f3-4b32-97ef-e0ad6d242fd6)
 
 Alternatively, run `Runtime.exe` directly by passing the message count as the only argument:
 
 ```console
-.\Runtime\bin\Debug\net8.0\Runtime.exe 10
+Runtime\bin\Debug\net8.0\Runtime.exe 10
 ```
